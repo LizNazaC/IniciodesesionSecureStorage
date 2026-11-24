@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Iniciosesion.Views.ProfilePage"
+             Title="Mi perfil"
+             BackgroundColor="#F4F7FB">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20" VerticalOptions="Center">
+            <Border Padding="24"
+                    BackgroundColor="White"
+                    Stroke="#E3E8F0"
+                    StrokeThickness="1"
+                    HorizontalOptions="Center"
+                    MaximumWidthRequest="480">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="14" HorizontalOptions="Center">
+                    <Label Text="Mi perfil"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#172B4D"
+                           HorizontalTextAlignment="Center" />
+                    <Border WidthRequest="144"
+                            HeightRequest="144"
+                            Stroke="#E3E8F0"
+                            StrokeThickness="2"
+                            HorizontalOptions="Center">
+                        <Border.StrokeShape>
+                            <Ellipse />
+                        </Border.StrokeShape>
+                        <Image x:Name="ProfileImage" Aspect="AspectFill" />
+                    </Border>
+                    <ActivityIndicator x:Name="LoadingIndicator"
+                                       IsVisible="False"
+                                       IsRunning="False"
+                                       Color="#3157D5" />
+                    <Label x:Name="FullNameLabel"
+                           FontSize="23"
+                           FontAttributes="Bold"
+                           TextColor="#172B4D"
+                           HorizontalTextAlignment="Center" />
+                    <Label x:Name="UsernameLabel"
+                           FontSize="15"
+                           TextColor="#667085"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Correo electrónico"
+                           FontAttributes="Bold"
+                           TextColor="#344054"
+                           HorizontalTextAlignment="Center" />
+                    <Label x:Name="EmailLabel"
+                           FontSize="16"
+                           TextColor="#475467"
+                           HorizontalTextAlignment="Center" />
+                    <Label x:Name="ErrorLabel"
+                           IsVisible="False"
+                           TextColor="#B42318"
+                           HorizontalTextAlignment="Center" />
+                    <Button x:Name="RetryButton"
+                            Text="Reintentar"
+                            IsVisible="False"
+                            Clicked="OnRetryClicked"
+                            BackgroundColor="#E9EEFF"
+                            TextColor="#3157D5"
+                            CornerRadius="12" />
+                    <Button Text="Cerrar sesión"
+                            Clicked="OnLogoutClicked"
+                            BackgroundColor="#3157D5"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="52" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

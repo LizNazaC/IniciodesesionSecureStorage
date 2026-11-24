@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Iniciosesion.Views.LoginPage"
+             Title="Iniciar sesión"
+             BackgroundColor="#F4F7FB">
+    <ScrollView>
+        <Grid Padding="24" VerticalOptions="Center">
+            <Border Padding="28"
+                    BackgroundColor="White"
+                    Stroke="#E3E8F0"
+                    StrokeThickness="1"
+                    HorizontalOptions="Center"
+                    MaximumWidthRequest="480">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Bienvenido"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="#172B4D" />
+                    <Label Text="Inicia sesión para consultar tu perfil"
+                           FontSize="15"
+                           TextColor="#667085" />
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Usuario" FontAttributes="Bold" TextColor="#344054" />
+                        <Border Padding="12,2" Stroke="#D0D5DD" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Entry x:Name="UsernameEntry"
+                                   Placeholder="Introduce tu usuario"
+                                   Keyboard="Text"
+                                   ReturnType="Next" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Contraseña" FontAttributes="Bold" TextColor="#344054" />
+                        <Border Padding="12,2" Stroke="#D0D5DD" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Entry x:Name="PasswordEntry"
+                                   Placeholder="Introduce tu contraseña"
+                                   IsPassword="True"
+                                   ReturnType="Go"
+                                   Completed="OnLoginClicked" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Label x:Name="ErrorLabel"
+                           IsVisible="False"
+                           TextColor="#B42318"
+                           FontSize="14" />
+                    <Button x:Name="LoginButton"
+                            Text="Iniciar sesión"
+                            Clicked="OnLoginClicked"
+                            BackgroundColor="#3157D5"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="52" />
+                    <ActivityIndicator x:Name="LoadingIndicator"
+                                       IsVisible="False"
+                                       IsRunning="False"
+                                       Color="#3157D5" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>
